@@ -138,11 +138,8 @@ p{
 }
 
 .reg{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 400px;
+    margin: auto;
     
 }
 
@@ -155,11 +152,8 @@ p{
 }
 
 .Setting{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 400px;
+    margin: auto;
 }
 
 .Setting h3{
