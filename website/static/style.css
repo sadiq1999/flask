@@ -5,6 +5,11 @@
     
 }
 
+body{
+    background: radial-gradient(#DFCED0, #9C535B);
+}
+
+
 .topBar{
     display: flex;
     align-items: center;
