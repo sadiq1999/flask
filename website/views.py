@@ -20,7 +20,7 @@ def home():
 def YourPlan():
     BMI = 0
     BMI_Category = ''
-    Cal_to_loss = 0
+    YourPlan.Cal_to_loss = 0
     goal_w = 0
     goal_time = 0
     Active_user1 = Active_user.query.filter_by(user_id=current_user.id).first()
@@ -71,18 +71,18 @@ def YourPlan():
         elif Active_user1.active1 == 'Very Active: 6-7 times/week':
             PAL = 1.725
         # Cal to loss 0.5 kg/week
-        Cal_to_loss = int(BMR * PAL - 500)
+        YourPlan.Cal_to_loss = int(BMR * PAL - 500)
         # Goal weight
         goal_w = float(Active_user1.goal_weight)
         goal_time = int((float(Active_user1.weight) - goal_w) / 0.5)
-    return (render_template(
+    return render_template(
         'YourPlan.html',
         user=current_user,
         BMI=BMI,
         BMI_Category=BMI_Category,
         Cal_to_loss=Cal_to_loss,
         goal_w=goal_w,
-        goal_time=goal_time), Cal_to_loss)
+        goal_time=goal_time)
 
 
 @views.route('/note', methods=['GET', 'POST'])
@@ -179,7 +179,8 @@ def plan():
 
     if request.method == 'POST':
         num_month1 = 28  # For Ex
-        Cal_to_loss = YourPlan()[1]
+        YourPlan()
+        Cal_to_loss = YourPlan.Cal_to_loss
         breakfastCal = round(Cal_to_loss * (30 / 100))
         lunchCal = round(Cal_to_loss * (40 / 100))
         dinnerCal = round(Cal_to_loss * (30 / 100))
