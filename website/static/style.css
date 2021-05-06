@@ -138,7 +138,7 @@ p{
 }
 
 .reg{
-    position: absolute;
+    
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -155,7 +155,7 @@ p{
 }
 
 .Setting{
-    position: absolute;
+    
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
