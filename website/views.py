@@ -75,14 +75,14 @@ def YourPlan():
         # Goal weight
         goal_w = float(Active_user1.goal_weight)
         goal_time = int((float(Active_user1.weight) - goal_w) / 0.5)
-    return render_template(
+    return (render_template(
         'YourPlan.html',
         user=current_user,
         BMI=BMI,
         BMI_Category=BMI_Category,
         Cal_to_loss=Cal_to_loss,
         goal_w=goal_w,
-        goal_time=goal_time)
+        goal_time=goal_time), Cal_to_loss)
 
 
 @views.route('/note', methods=['GET', 'POST'])
@@ -179,7 +179,7 @@ def plan():
 
     if request.method == 'POST':
         num_month1 = 28  # For Ex
-        Cal_to_loss = 1999
+        Cal_to_loss = YourPlan()[1]
         breakfastCal = round(Cal_to_loss * (30 / 100))
         lunchCal = round(Cal_to_loss * (40 / 100))
         dinnerCal = round(Cal_to_loss * (30 / 100))
