@@ -21,6 +21,7 @@ def YourPlan():
     BMI = 0
     BMI_Category = ''
     YourPlan.Cal_to_loss = 0
+    Cal_to_loss1 = 0
     goal_w = 0
     goal_time = 0
     Active_user1 = Active_user.query.filter_by(user_id=current_user.id).first()
@@ -72,6 +73,7 @@ def YourPlan():
             PAL = 1.725
         # Cal to loss 0.5 kg/week
         YourPlan.Cal_to_loss = int(BMR * PAL - 500)
+        Cal_to_loss1 = int(BMR * PAL - 500)
         # Goal weight
         goal_w = float(Active_user1.goal_weight)
         goal_time = int((float(Active_user1.weight) - goal_w) / 0.5)
@@ -80,7 +82,7 @@ def YourPlan():
         user=current_user,
         BMI=BMI,
         BMI_Category=BMI_Category,
-        Cal_to_loss=Cal_to_loss,
+        Cal_to_loss=Cal_to_loss1,
         goal_w=goal_w,
         goal_time=goal_time)
 
