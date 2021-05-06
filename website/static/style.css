@@ -5,11 +5,6 @@
     
 }
 
-body{
-    background: radial-gradient(#DFCED0, #9C535B);
-}
-
-
 .topBar{
     display: flex;
     align-items: center;
@@ -89,8 +84,14 @@ p{
 }
 
 .header{
+    
+    
+}
+
+body{
     background: radial-gradient(#DFCED0, #9C535B);
 }
+
 .header .row{
     margin: 90px;
 }
@@ -144,9 +145,11 @@ p{
 
 .reg{
     width: 400px;
-    margin: auto;
+    margin: auto;;
     
 }
+
+
 
 .reg  h3{
     color: red;
@@ -278,6 +281,12 @@ p{
 }
 
 .col-h{
+    padding: 15px; 
+    width: auto;
+    margin: auto;
+}
+
+.col-h1{
     padding: 15px; 
     margin-left: 20%;
 }
@@ -421,4 +430,6 @@ hr.new5 {
     color: #8a8a8a;
     font-size: 14px;
     padding: 60px 0 20px;
+    margin: auto;
+    width: auto;
 }
