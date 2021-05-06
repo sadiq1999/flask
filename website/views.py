@@ -82,7 +82,7 @@ def YourPlan():
         BMI_Category=BMI_Category,
         Cal_to_loss=Cal_to_loss,
         goal_w=goal_w,
-        goal_time=goal_time), Cal_to_loss
+        goal_time=goal_time)
 
 
 @views.route('/note', methods=['GET', 'POST'])
@@ -179,7 +179,7 @@ def plan():
 
     if request.method == 'POST':
         num_month1 = 28  # For Ex
-        Cal_to_loss = YourPlan()[1]
+        Cal_to_loss = 1999
         breakfastCal = round(Cal_to_loss * (30 / 100))
         lunchCal = round(Cal_to_loss * (40 / 100))
         dinnerCal = round(Cal_to_loss * (30 / 100))
