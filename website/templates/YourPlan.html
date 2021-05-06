@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Diet Plan | Your Plain</title>
+    <link rel = "icon" href = "static/Image/Logo/logo.png" type = "image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- All contain of the header -->
+        <div class="allCont">
+
+            <!-- Top Bar contant -->
+            <div class="topBar">
+                <!-- logo image --> 
+                <div class="logo">
+                    <img src="static/Image/Logo/logo.png" width="85px">
+                </div>
+
+                <!-- btns -->
+                <nav>
+                    <ul>
+                        <li><a id="home" href="/">Home</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a id="YourPlan" href="/YourPlan">YourPlan</a></li>
+                        <li><a id="logout" href="/logout">LogOut</a></li>
+                        {% else %}
+                        <li><a id="login" href="/login">Login</a></li>
+                        <li><a id="signup" href="/sign-up">SignUp</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- error message -->
+            <div class="error-info">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'error'%}
+                            <div class="alert">
+                                {{ message }}
+                                <span aria-hidden="true" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                         {% else %}
+                            <div class="alert-true">
+                                {{ message }}
+                                <span aria-hidden="true" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <!--  -->
+
+            
+            <!-- featured -->
+         
+            <div class="col-h">
+                <a id="note" href="/note"><img src="static/Image/Icons/note.png" class="image"></a>
+                <a id="settings" href="/settings"><img src="static/Image/Icons/SETTINGS.png" class="image"></a>
+                <a id="plan" href="/plan"><img src="static/Image/Icons/plan.png" class="image"></a>
+                <a id="exercises" href="/exercises"><img src="static/Image/Icons/EXERCISES.png" class="image"></a>
+            </div>     
+            
+            <!-- img and txt -->
+            
+                <div class="col-info">
+                        <p>Nmae: <span class="user-info">{{user.first_name}}</span></p> 
+                        {% if not user.active2 %}
+                        <h1>Do "PLAN'S SEETINGS" to see your information</h1>
+                        {% else %}
+                        {%  for actv in user.active2 %}
+                        <p>Age: <span class="user-info">{{actv.age}} years </span>
+                            <span id="col-info1">Gender: <span class="user-info">{{actv.gender}}</span><br/></span>
+                            Height: <span class="user-info">{{actv.height}} cm </span>
+                            <span id="col-info1">Weight: <span class="user-info">{{actv.weight}} kg</span></span> <br/>
+                            Active: <span class="user-info">{{actv.active1}}</span> <br/>
+                            BMI : <span class="user-info">{{BMI}} ({{BMI_Category}})</span> <br/>
+                            Calories you need to lose 0.5kg per week: <span class="user-info">{{Cal_to_loss}}</span> <br/>
+                            Goal Weight: <span class="user-info">{{goal_w}} kg</span>
+                            prtentially reaching your goal in <span class="user-info">{{goal_time}}</span> weeks
+                        </p>
+                        {% endfor %}
+                        {% endif %}
+                </div>
+            
+
+            <!--  -->
+            {%  for food in user.food2 %}
+            <h1>breackfast:</h1>
+            {% for i in (food.breakfast.split(',')) %}
+                <img src="static/Image/breackfast/{{i}}.png" class="img-plan"> 
+            {% endfor %}
+            <h1>lunch:</h1>
+            {% for i in (food.lunch.split(',')) %}
+                <img src="static/Image/breackfast/{{i}}.png" class="img-plan"> 
+            {% endfor %}
+            <h1>dinner:</h1>
+            {% for i in (food.dinner.split(',')) %}
+                <img src="static/Image/breackfast/{{i}}.png" class="img-plan"> 
+            {% endfor %}
+            <br/><hr class="new5">
+        {% endfor %}
+
+        </div>
+
+        <div class="r">
+            <h3>&nbsp;</h3>
+        </div>
+        
+    </div>
+
+      <!-- Footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Contact us:</h3>
+                <p>E-mail: dietplan276@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!----  -->
+    
+</body>
+
+</html>

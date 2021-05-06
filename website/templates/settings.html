@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Diet Plan | Your Notes</title>
+    <link rel = "icon" href = "static/Image/Logo/logo.png" type = "image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- All contain of the header -->
+        <div class="allCont">
+
+            <!-- Top Bar contant -->
+            <div class="topBar">
+                <!-- logo image --> 
+                <div class="logo">
+                    <img src="static/Image/Logo/logo.png" width="85px">
+                </div>
+
+                <!-- btns -->
+                <nav>
+                    <ul>
+                        <li><a id="home" href="/">Home</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a id="YourPlan" href="/YourPlan">YourPlan</a></li>
+                        <li><a id="logout" href="/logout">LogOut</a></li>
+                        {% else %}
+                        <li><a id="login" href="/login">Login</a></li>
+                        <li><a id="signup" href="/sign-up">SignUp</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- error message -->
+            <div class="error-info">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'error'%}
+                            <div class="alert">
+                                {{ message }}
+                                <span aria-hidden="true" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                         {% else %}
+                            <div class="alert-true">
+                                {{ message }}
+                                <span aria-hidden="true" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <!--  -->
+
+            <!-- img and txt -->
+            
+                <div class="col33">
+                
+            
+            {% if not user.active2 %}
+            <div class="Setting">
+            <form method="POST">
+                <h3> PLAN'S SEETINGS</h3>
+                <br/>
+                <div class="form-group">
+                    <label for="age">Age:</label><br/>
+                    <input type="text"
+                     id="age"
+                     name="age"
+                     placeholder="Enter Age">
+                </div>
+                <br/><br/>
+                <div class="form-group">
+                    <label for="gender">Gender:</label><br/>
+                    <select name="gender" id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <br/><br/>
+                <div class="form-group">
+                    <label for="height">Height (cm):</label><br/>
+                    <input type="text"
+                     id="height"
+                     name="height"
+                     placeholder="Enter Height">
+                </div>
+                <br/><br/>
+                <div class="form-group">
+                    <label for="weight">Weight (kg):</label><br/>
+                    <input type="text"
+                     id="weight"
+                     name="weight"
+                     placeholder="Enter Weight">
+                </div>
+                <br/><br/>
+                <div class="form-group">
+                    <label for="goal-weight">Goal Weight (kg):</label><br/>
+                    <input type="text"
+                     id="goal-weight"
+                     name="goal-weight"
+                     placeholder="Enter Goal Weight">
+                </div>
+                <br/><br/>
+                <div class="form-group">
+                    <label for="active">How Active Are You?</label><br/>
+                    <select name="active" id="active">
+                        <option value="Sedentary Active: little or no exercise">Sedentary Active: little or no exercise</option>
+                        <option value="Lightly Active: 1-3 times/week">Lightly Active: 1-3 times/week</option>
+                        <option value="Moderately Active: 4-5 times/week">Moderately Active: 4-5 times/week</option>
+                        <option value="Very Active: 6-7 times/week">Very Active: 6-7 times/week</option>
+                    </select>
+                </div>
+                
+                <br/>
+    
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="reg">
+        {%  for actv in user.active2 %}
+            <h3> PLAN'S SEETINGS</h3>
+            <br/>
+            <div class="form-group">
+                <h1>age: </h1> <h1 id = "forme-h">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{actv.age}} years</h1>
+                <h1>gender: </h1> <h1 id = "forme-h">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{actv.gender}}</h1>
+                <h1>height: </h1> <h1 id = "forme-h">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{actv.height}} cm</h1>
+                <h1>weight: </h1> <h1 id = "forme-h">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{actv.weight}} kg</h1>
+                <h1>Goal Weight: </h1> <h1 id = "forme-h">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{actv.goal_weight}} kg</h1>
+                <h1>active: </h1> <h1 id = "forme-h">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{actv.active1}}</h1>
+            </div>
+            <a id="changeSetting" href="/changeSetting" class="btn-changeSetting">Change Settings</a>  
+                    
+        {% endfor %}
+        {% endif %}
+    </div>
+       
+
+</div>
+
+
+            <!--  -->
+
+        </div>
+    </div>
+
+      <!-- Footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Contact us:</h3>
+                <p>E-mail: dietplan276@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!----  -->
+
+</body>
+
+</html>

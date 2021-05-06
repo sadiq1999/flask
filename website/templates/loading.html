@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Diet Plan | loading</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        .loader {
+          border: 16px solid #f3f3f3;
+          border-radius: 50%;
+          border-top: 16px solid #3498db;
+          width: 120px;
+          height: 120px;
+          -webkit-animation: spin 2s linear infinite; /* Safari */
+          animation: spin 2s linear infinite;
+            margin-top: 15%;
+            margin-left: 45%;
+            
+        }
+        #t{
+            margin-top: 5%;
+            margin-left: 40%;
+        }
+        #t1{
+            margin-top: 16%;
+        }
+        
+        /* Safari */
+        @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(0deg); }
+          100% { -webkit-transform: rotate(360deg); }
+        }
+        
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- All contain of the header -->
+        <div class="allCont">
+
+            <!-- Top Bar contant -->
+            <div class="topBar">
+                <!-- logo image --> 
+                <div class="logo">
+                    <img src="static/Image/Logo/logo.png" width="85px">
+                </div>
+
+                <!-- btns -->
+            </div>
+
+            <!-- error message -->
+            <div class="error-info">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'error'%}
+                            <div class="alert">
+                                {{ message }}
+                                <span aria-hidden="true" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                         {% else %}
+                            <div class="alert-true">
+                                {{ message }}
+                                <span aria-hidden="true" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <!--  -->
+
+            <!-- img and txt -->
+            <div class="loader"></div>    
+            <h2 id="t">Creating your diet plan...</h2>   
+            <h2 id="t1">&nbsp;</h2> 
+
+            <!--  -->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+
+</body>
+
+
+
+</html>

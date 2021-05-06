@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Diet Plan | Home</title>
+    <link rel = "icon" href = "static/Image/Logo/logo.png" type = "image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <!-- All contain of the header -->
+        <div class="allCont">
+
+            <!-- Top Bar contant -->
+            <div class="topBar">
+                <!-- logo image --> 
+                <div class="logo">
+                    <img src="static/Image/Logo/logo.png" width="85px">
+                </div>
+
+                <!-- btns -->
+                <nav>
+                    <ul>
+                        <li><a id="home" href="/">Home</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a id="YourPlan" href="/YourPlan">YourPlan</a></li>
+                        <li><a id="logout" href="/logout">LogOut</a></li>
+                        {% else %}
+                        <li><a id="login" href="/login">Login</a></li>
+                        <li><a id="signup" href="/sign-up">SignUp</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- error message -->
+            <div class="error-info">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        {% if category == 'error'%}
+                            <div class="alert">
+                                {{ message }}
+                                <span aria-hidden="true" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                         {% else %}
+                            <div class="alert-true">
+                                {{ message }}
+                                <span aria-hidden="true" class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <!--  -->
+
+            <!-- img and txt -->
+            <div class="row">
+                <div class="col">
+                    <p>A diet plan website is a website that generates a diet plan for you based on your body information</p>
+                    <h1>Get your diet plan now</h1>
+                    
+                    {% if user.is_authenticated %}
+                        <a href="/YourPlan" class="btn">Start Now</a>
+                    {% else %}
+                        <a href="/sign-up" class="btn">Start Now</a>
+                    {% endif %}
+                </div>
+                <div class="col">
+                    <img src="static/Image/Logo/logo.png">
+                </div>
+            </div>
+            <!-- featured -->
+            
+            
+                
+                    
+                    <div class="col-h"> 
+                        <h1>features:</h1>
+                        <img src="static/Image/features/diet_plan.png" class="image-2">
+                        <img src="static/Image/features/exercises.png" class="image-2">
+                        <img src="static/Image/features/write_notes.png" class="image-2">
+                    </div>
+                    
+                
+            
+
+            <!--  -->
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-1">
+                <h3>Contact us:</h3>
+                <p>E-mail: dietplan276@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!----  -->
+
+</body>
+
+
+
+</html>

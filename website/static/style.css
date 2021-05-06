@@ -1,0 +1,425 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.topBar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav{
+    flex: 1;
+    text-align: right;
+}
+
+
+ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+p{
+    color: blueviolet;
+}
+
+.allCont{
+    max-width: 1800px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col{
+    flex-basis: 35%;
+    min-width: 300px;
+}
+
+.col img{
+    max-width: 100%;
+    padding: 100px 0;
+}
+
+.col h1 {
+    font-size: 50px;
+    color: black;
+}
+
+.col p{
+    font-size: 30px;
+    color: black;
+}
+
+.btn{
+    display: inline-block;
+    background: #3d8d00;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #137000;
+}
+
+.header{
+    background: radial-gradient(#DFCED0, #9C535B);
+}
+.header .row{
+    margin: 90px;
+}
+
+.featur{
+    margin: 70px 0;
+}
+.col2{
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+.col2 img{
+    width: 100%;
+}
+.smallFea{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  
+}
+
+
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+}
+
+.alert-true{
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.reg{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    
+}
+
+.reg  h3{
+    color: red;
+    font-size: 40px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 40px 0;
+}
+
+.Setting{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+}
+
+.Setting h3{
+    color: red;
+    font-size: 40px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 40px 0;
+}
+
+.Setting button{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 50px;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+.Setting button:hover{
+    background-color: gray;
+}
+
+
+.form-group label{
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.form-group input{
+    font-size: 16px;
+    padding: 15px 10px;
+    width: 100%;
+    margin: 5px 0;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group select{
+    font-size: 16px;
+    padding: 15px 10px;
+    width: 100%;
+    margin: 5px 0;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-group h1{
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+#forme-h {
+    color: blue;
+}
+
+.reg button{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 50px;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+.reg button:hover{
+    background-color: gray;
+}
+
+.col33{
+    max-width: 500%;
+    padding: 500px 0;
+    
+    overflow:hidden;
+    
+}
+
+.r{
+    margin-bottom: 0%;
+}
+
+
+.col4 {
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.col4 img{
+    width: 100%;
+}
+
+.image:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.image{
+    width: 228px;  
+    height: 195px;   
+    padding: 15px;  
+
+}
+
+.image-2{
+    width: 341px;  
+    height: 341px;   
+    padding: 15px;  
+}
+
+.col-h{
+    padding: 15px; 
+    margin-left: 20%;
+}
+
+.alert1 {
+    padding: 20px;
+    color: rgb(4, 102, 89);
+    font-size: 22px;
+}
+
+.header1{
+    background: radial-gradient(#DFCED0, #9C535B);
+    position: absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+   
+}
+
+.note-forme button{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 50px;
+    width: 20%;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.note-forme button:hover{
+    background-color: gray;
+}
+
+.note-forme textarea{
+    width: 100%;
+    font-size: 25px;
+    padding: 10px 10px;
+    margin: 5px 0;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+.col-info{
+    
+    min-width: 300px;
+    background-color: blanchedalmond;
+    width: 50%;
+    font-size: 12px;
+    padding: 10px 10px;
+    
+    margin-left: 22%;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+}
+.col-info h1{
+    color: rgb(212, 8, 8);
+    margin-left: 10%;
+}
+
+#col-info1{
+    margin-left: 20%;
+}
+
+#plan-h{
+    color: rgb(255, 230, 0);
+    margin-left: 10%;
+}
+
+
+.btn-changeSetting{
+    font-weight: bold;
+    font-size: 20px;
+    display: inline-block;
+    background: white;
+    color: black;
+    padding: 10px 30px;
+    margin: 20px 0;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+}
+.btn-changeSetting:hover{
+    background-color: gray;
+}
+
+
+.user-info{
+    color: blue;
+}
+
+.col-info p{
+    font-size: 25px;
+    color: black;
+}
+
+.plan-btn{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 50px;
+    width: 20%;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(146, 14, 14, 0.74)
+   
+}
+
+.plan-btn:hover{
+    background-color: rgb(231, 90, 90);
+}
+
+.img-plan{
+    width: 283px;  
+    height: 113px;   
+    padding: 15px;  
+  
+}
+
+hr.new5 {
+    border: 5px solid rgb(172, 172, 172);
+    border-radius: 5px;
+}
+
+.r h3{
+    margin-top: 20%;
+}
+
+.r1 h3{
+    margin-top: 35%;
+}
+
+/*--------footer ---------*/
+.footer{
+    background-color: black;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}

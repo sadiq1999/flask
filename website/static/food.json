@@ -1,0 +1,128 @@
+{
+    "breakfast":[
+        {
+            "name": "banana",
+            "cal": 105
+        },
+        {
+            "name": "apple",
+            "cal": 95
+        },
+        {
+            "name": "cornflakes_with_milk",
+            "cal": 212
+        },
+        {
+            "name": "egg_sandwich",
+            "cal": 367
+        },
+        {
+            "name": "fried_egg",
+            "cal": 90
+        },
+        {
+            "name": "mashed_potato",
+            "cal": 237
+        },
+        {
+            "name": "milk",
+            "cal": 149
+        },
+        {
+            "name": "oatmeal_Cookies",
+            "cal": 135
+        },
+        {
+            "name": "sausage",
+            "cal": 150
+        },
+        {
+            "name": "toasted_cheese_sandwich",
+            "cal": 366
+        }
+    ],
+    "lunch":[
+        {
+            "name": "banana",
+            "cal": 105
+        },
+        {
+            "name": "apple",
+            "cal": 95
+        },
+        {
+            "name": "cornflakes_with_milk",
+            "cal": 212
+        },
+        {
+            "name": "egg_sandwich",
+            "cal": 367
+        },
+        {
+            "name": "fried_egg",
+            "cal": 90
+        },
+        {
+            "name": "mashed_potato",
+            "cal": 237
+        },
+        {
+            "name": "milk",
+            "cal": 149
+        },
+        {
+            "name": "oatmeal_Cookies",
+            "cal": 135
+        },
+        {
+            "name": "sausage",
+            "cal": 150
+        },
+        {
+            "name": "toasted_cheese_sandwich",
+            "cal": 366
+        }
+      ],
+    "dinner":[
+        {
+            "name": "banana",
+            "cal": 105
+        },
+        {
+            "name": "apple",
+            "cal": 95
+        },
+        {
+            "name": "cornflakes_with_milk",
+            "cal": 212
+        },
+        {
+            "name": "egg_sandwich",
+            "cal": 367
+        },
+        {
+            "name": "fried_egg",
+            "cal": 90
+        },
+        {
+            "name": "mashed_potato",
+            "cal": 237
+        },
+        {
+            "name": "milk",
+            "cal": 149
+        },
+        {
+            "name": "oatmeal_Cookies",
+            "cal": 135
+        },
+        {
+            "name": "sausage",
+            "cal": 150
+        },
+        {
+            "name": "toasted_cheese_sandwich",
+            "cal": 366
+        }
+        ]
+}
